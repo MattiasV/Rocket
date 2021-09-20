@@ -15,6 +15,9 @@ class Ui_eBoiler(object):
     def setupUi(self, eBoiler):
         eBoiler.setObjectName("eBoiler")
         eBoiler.resize(727, 491)
+        self.CentralBox = QtWidgets.QWidget(eBoiler)
+        self.CentralBox.setGeometry(QtCore.QRect(230, 160, 271, 161))
+        self.CentralBox.setObjectName("CentralBox")
 
         self.retranslateUi(eBoiler)
         QtCore.QMetaObject.connectSlotsByName(eBoiler)

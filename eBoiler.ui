@@ -13,6 +13,16 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QWidget" name="CentralBox" native="true">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>160</y>
+     <width>271</width>
+     <height>161</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
