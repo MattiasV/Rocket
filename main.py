@@ -1,4 +1,5 @@
 import sys
+from time import sleep
 
 from eBoiler import Ui_eBoiler
 
@@ -10,12 +11,34 @@ class GUI_setup(QtWidgets.QMainWindow):
 
         self.ui = Ui_eBoiler()
         self.ui.setupUi(self)
+        self.ui.Equipment1.setStyleSheet("Background: red")
+        self.ui.ChangeColorButton.clicked.connect(self.changeColor)
+        self.ui.disappearButton.clicked.connect(self.disappear)
+        self.ui.appearButton.clicked.connect(self.appear)
 
-        self.ui.TutorialPushButton.clicked.connect(self.tutorial)
 
-    def tutorial(self):
-        self.statusBar().showMessage('Pressed on the tutorial button', 2000)
-        QtWidgets.QMessageBox.information(self,'Succes', 'Tutorial messagebox opened')
+    def disappear(self):
+        visible = self.ui.Panel.isVisible()
+        if visible:
+            print('its visible')
+        else:
+            print('its invisible')
+
+        self.ui.Panel.setVisible(False)
+
+        visible = self.ui.Panel.isVisible()
+        if visible:
+            print('its visible')
+        else:
+            print('its invisible')
+
+    def appear(self):
+        self.ui.Panel.setVisible(True)
+
+    def changeColor(self):
+
+        self.ui.Equipment1.setStyleSheet("Background: green")
+
 
 
 if __name__ == "__main__":
