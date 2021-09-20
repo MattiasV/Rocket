@@ -37,7 +37,7 @@
     <string>e-Boiler Setup Lab</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="TutorialPushButton">
+  <widget class="QPushButton" name="ChangeColorButton">
    <property name="geometry">
     <rect>
      <x>26</x>
@@ -47,7 +47,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Tutorial</string>
+    <string>Change color</string>
    </property>
   </widget>
   <widget class="QWidget" name="widget" native="true">
@@ -141,7 +141,7 @@
      <string>Boiler 2</string>
     </property>
    </widget>
-   <widget class="QGraphicsView" name="Equipment1_4">
+   <widget class="QGraphicsView" name="Equipment4">
     <property name="geometry">
      <rect>
       <x>18</x>
@@ -171,7 +171,7 @@
    </widget>
    <zorder>Equipment3</zorder>
    <zorder>Equipment2</zorder>
-   <zorder>Equipment1_4</zorder>
+   <zorder>Equipment4</zorder>
    <zorder>Equipment1</zorder>
    <zorder>label_4</zorder>
    <zorder>label_3</zorder>
@@ -206,7 +206,7 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
   </widget>
-  <widget class="QWidget" name="CentralBox_3" native="true">
+  <widget class="QWidget" name="Panel" native="true">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -224,7 +224,13 @@ p, li { white-space: pre-wrap; }
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <widget class="QPushButton" name="pushButton_2">
+   <property name="font">
+    <font>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <widget class="QPushButton" name="PanelButton1">
     <property name="geometry">
      <rect>
       <x>6</x>
@@ -238,11 +244,39 @@ p, li { white-space: pre-wrap; }
     </property>
    </widget>
   </widget>
-  <zorder>CentralBox_3</zorder>
+  <widget class="QPushButton" name="disappearButton">
+   <property name="geometry">
+    <rect>
+     <x>26</x>
+     <y>48</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Disappear</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="appearButton">
+   <property name="geometry">
+    <rect>
+     <x>26</x>
+     <y>78</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Appear</string>
+   </property>
+  </widget>
+  <zorder>Panel</zorder>
   <zorder>widget</zorder>
   <zorder>label</zorder>
-  <zorder>TutorialPushButton</zorder>
+  <zorder>ChangeColorButton</zorder>
   <zorder>widget_2</zorder>
+  <zorder>disappearButton</zorder>
+  <zorder>appearButton</zorder>
  </widget>
  <resources/>
  <connections/>
