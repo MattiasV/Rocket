@@ -12,6 +12,7 @@ class GUI_setup(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
 
         self.ui.TutorialPushButton.clicked.connect(self.tutorial)
+        self.ui.Equipment1.colorCount(self)
 
 
     def tutorial(self):
