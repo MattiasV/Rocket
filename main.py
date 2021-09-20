@@ -13,6 +13,7 @@ class GUI_setup(QtWidgets.QMainWindow):
 
         self.ui.TutorialPushButton.clicked.connect(self.tutorial)
 
+
     def tutorial(self):
         self.statusBar().showMessage('Pressed on the tutorial button', 2000)
         QtWidgets.QMessageBox.information(self,'Succes', 'Tutorial messagebox opened')
