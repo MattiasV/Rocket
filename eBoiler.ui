@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>eBoiler_UI</class>
- <widget class="QWidget" name="eBoiler_UI">
+ <class>eBoiler</class>
+ <widget class="QWidget" name="eBoiler">
   <property name="geometry">
    <rect>
     <x>0</x>
