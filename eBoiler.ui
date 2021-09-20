@@ -41,6 +41,19 @@
     <string>e-Boiler Setup Lab</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="TutorialPushButton">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>340</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Tutorial</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

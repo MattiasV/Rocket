@@ -11,6 +11,11 @@ class GUI_setup(QtWidgets.QMainWindow):
         self.ui = Ui_eBoiler()
         self.ui.setupUi(self)
 
+        self.ui.TutorialPushButton.clicked.connect(self.tutorial)
+
+    def tutorial(self):
+        self.statusBar().showMessage('Pressed on the tutorial button', 2000)
+        QtWidgets.QMessageBox.information(self,'Succes', 'Tutorial messagebox opened')
 
 
 if __name__ == "__main__":
