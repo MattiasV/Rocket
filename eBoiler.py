@@ -11,14 +11,14 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(727, 491)
+class Ui_eBoiler_UI(object):
+    def setupUi(self, eBoiler_UI):
+        eBoiler_UI.setObjectName("eBoiler_UI")
+        eBoiler_UI.resize(727, 491)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(eBoiler_UI)
+        QtCore.QMetaObject.connectSlotsByName(eBoiler_UI)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, eBoiler_UI):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        eBoiler_UI.setWindowTitle(_translate("eBoiler_UI", "Form"))
