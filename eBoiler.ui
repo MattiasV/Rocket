@@ -16,11 +16,29 @@
   <widget class="QWidget" name="CentralBox" native="true">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>160</y>
+     <x>240</x>
+     <y>120</y>
      <width>271</width>
      <height>161</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>50</y>
+     <width>241</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>e-Boiler Setup Lab</string>
    </property>
   </widget>
  </widget>
