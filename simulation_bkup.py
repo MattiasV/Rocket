@@ -10,40 +10,35 @@ import numpy
 from pygame import gfxdraw
 
 
-
-class GAS:
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        pygame.init()
-        self.params.game_width = 800
-        self.params.game_height = 600
-        self.params.white = (255, 255, 255)
-        self.params.black = (0, 0, 0)
-        self.params.red = (255, 0, 0)
-        self.params.green = (0, 255, 0)
-        self.params.blue = (0, 0, 255)
-        self.params.fps = 60
-        self.params.size = 5
-        self.params.mutation_rate = 0.2
-        self.params.steering_weights = 0.5
-        self.params.perception_radius_mutation_range = 30
-        self.params.reproduction_rate = 0.0005
-        self.params.initial_perception_radius = 100
-        self.params.boundary_size = 10
-        self.params.max_vel = 10
-        self.params.initial_max_force = 0.5
-        self.params.health = 100
-        self.params.max_poison = 50
-        self.params.nutrition = [20, -80]
-        self.params.bots = []
-        self.params.food = []
-        self.params.poison = []
-        self.params.oldest_ever = 0
-        self.params.oldest_ever_dna = []
-        self.params.gameDisplay = pygame.display.set_mode((game_width, game_height))
-        self.params.clock = pygame.time.Clock()
-
+def main():
+    pygame.init()
+    game_width = 800
+    game_height = 600
+    white = (255, 255, 255)
+    black = (0, 0, 0)
+    red = (255, 0, 0)
+    green = (0, 255, 0)
+    blue = (0, 0, 255)
+    fps = 60
+    size = 5
+    mutation_rate = 0.2
+    steering_weights = 0.5
+    perception_radius_mutation_range = 30
+    reproduction_rate = 0.0005
+    initial_perception_radius = 100
+    boundary_size = 10
+    max_vel = 10
+    initial_max_force = 0.5
+    health = 100
+    max_poison = 50
+    nutrition = [20, -80]
+    bots = []
+    food = []
+    poison = []
+    oldest_ever = 0
+    oldest_ever_dna = []
+    gameDisplay = pygame.display.set_mode((game_width, game_height))
+    clock = pygame.time.Clock()
 
     def lerp():
         percent_health = bot.health / health
@@ -241,5 +236,5 @@ class GAS:
     pygame.quit()
     quit()
 
-if __name__ == "__main__":
-    GAS()
+
+main()
