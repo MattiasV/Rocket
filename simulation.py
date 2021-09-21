@@ -11,6 +11,7 @@ from pygame import gfxdraw
 
 
 
+<<<<<<< HEAD
 class GAS:
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -44,6 +45,37 @@ class GAS:
         self.params.gameDisplay = pygame.display.set_mode((game_width, game_height))
         self.params.clock = pygame.time.Clock()
 
+=======
+def main():
+    pygame.init()
+    game_width = 800
+    game_height = 600
+    white = (255, 255, 255)
+    black = (0, 0, 0)
+    red = (255, 0, 0)
+    green = (0, 255, 0)
+    blue = (0, 0, 255)
+    fps = 60
+    size = 5
+    mutation_rate = 0.2
+    steering_weights = 0.5
+    perception_radius_mutation_range = 30
+    reproduction_rate = 0.0005
+    initial_perception_radius = 100
+    boundary_size = 10
+    max_vel = 10
+    initial_max_force = 0.5
+    health = 100
+    max_poison = 50
+    nutrition = [20, -80]
+    bots = []
+    food = []
+    poison = []
+    oldest_ever = 0
+    oldest_ever_dna = []
+    gameDisplay = pygame.display.set_mode((game_width, game_height))
+    clock = pygame.time.Clock()
+>>>>>>> 664aa7a26b36ad91a95399ca9248134c25d33019
 
     def lerp():
         percent_health = bot.health / health
