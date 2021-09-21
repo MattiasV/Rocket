@@ -18,19 +18,21 @@ class GUI_setup(QtWidgets.QMainWindow):
 
 
     def disappear(self):
-        visible = self.ui.Panel.isVisible()
+        visible = self.ui.Panel_1.isVisible()
         if visible:
             print('its visible')
         else:
             print('its invisible')
 
-        self.ui.Panel.setVisible(False)
+        self.ui.Panel_1.setVisible(False)
+        #sleep(1)
+        self.ui.Panel_2.setVisible(True)
 
-        visible = self.ui.Panel.isVisible()
-        if visible:
-            print('its visible')
+        visible2 = self.ui.Panel_2.isVisible()
+        if visible2:
+            print('its visible 2')
         else:
-            print('its invisible')
+            print('its invisible 2')
 
     def appear(self):
         self.ui.Panel.setVisible(True)

@@ -201,12 +201,25 @@
      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Terminal</string>
     </property>
    </widget>
   </widget>
-  <widget class="QWidget" name="Panel" native="true">
+  <widget class="QWidget" name="Panel_1" native="true">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -230,7 +243,7 @@ p, li { white-space: pre-wrap; }
      <bold>false</bold>
     </font>
    </property>
-   <widget class="QPushButton" name="PanelButton1">
+   <widget class="QPushButton" name="PanelButton_1">
     <property name="geometry">
      <rect>
       <x>6</x>
@@ -270,13 +283,89 @@ p, li { white-space: pre-wrap; }
     <string>Appear</string>
    </property>
   </widget>
-  <zorder>Panel</zorder>
+  <widget class="QWidget" name="Panel_2" native="true">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>163</x>
+     <y>94</y>
+     <width>387</width>
+     <height>239</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <widget class="QPushButton" name="PanelButton_2">
+    <property name="geometry">
+     <rect>
+      <x>102</x>
+      <y>3</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>2</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="Panel_3" native="true">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>94</y>
+     <width>391</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <widget class="QPushButton" name="PanelButton1_3">
+    <property name="geometry">
+     <rect>
+      <x>202</x>
+      <y>2</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>3</string>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>94</x>
+      <y>152</y>
+      <width>118</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+  </widget>
+  <zorder>Panel_1</zorder>
   <zorder>widget</zorder>
   <zorder>label</zorder>
   <zorder>ChangeColorButton</zorder>
   <zorder>widget_2</zorder>
   <zorder>disappearButton</zorder>
   <zorder>appearButton</zorder>
+  <zorder>Panel_2</zorder>
+  <zorder>Panel_3</zorder>
  </widget>
  <resources/>
  <connections/>
