@@ -10,6 +10,7 @@ import numpy
 from pygame import gfxdraw
 
 
+
 def main():
     pygame.init()
     game_width = 800
