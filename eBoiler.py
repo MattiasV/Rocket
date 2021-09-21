@@ -128,6 +128,9 @@ class Ui_eBoiler(object):
         self.progressBar.setGeometry(QtCore.QRect(94, 152, 118, 23))
         self.progressBar.setProperty("value", 24)
         self.progressBar.setObjectName("progressBar")
+        self.progressBarButton = QtWidgets.QPushButton(eBoiler)
+        self.progressBarButton.setGeometry(QtCore.QRect(124, 18, 93, 28))
+        self.progressBarButton.setObjectName("progressBarButton")
         self.Panel_1.raise_()
         self.widget.raise_()
         self.label.raise_()
@@ -137,6 +140,7 @@ class Ui_eBoiler(object):
         self.appearButton.raise_()
         self.Panel_2.raise_()
         self.Panel_3.raise_()
+        self.progressBarButton.raise_()
 
         self.retranslateUi(eBoiler)
         QtCore.QMetaObject.connectSlotsByName(eBoiler)
@@ -154,11 +158,12 @@ class Ui_eBoiler(object):
         self.textBrowser.setHtml(_translate("eBoiler", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;\"><br /></p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.label_7.setText(_translate("eBoiler", "Terminal"))
         self.PanelButton_1.setText(_translate("eBoiler", "1"))
         self.disappearButton.setText(_translate("eBoiler", "Disappear"))
         self.appearButton.setText(_translate("eBoiler", "Appear"))
         self.PanelButton_2.setText(_translate("eBoiler", "2"))
         self.PanelButton1_3.setText(_translate("eBoiler", "3"))
+        self.progressBarButton.setText(_translate("eBoiler", "progress Bar"))

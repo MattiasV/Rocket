@@ -15,6 +15,13 @@ class GUI_setup(QtWidgets.QMainWindow):
         self.ui.ChangeColorButton.clicked.connect(self.changeColor)
         self.ui.disappearButton.clicked.connect(self.disappear)
         self.ui.appearButton.clicked.connect(self.appear)
+        self.ui.progressBarButton.clicked.connect(self.progressbar)
+
+
+    def progressbar(self):
+        for i in range(101):
+            # sleep(i / 1000)
+            self.ui.progressBar.setValue(i)
 
 
     def disappear(self):
