@@ -20,7 +20,7 @@ class GUI_setup(QtWidgets.QMainWindow):
 
     def progressbar(self):
         for i in range(101):
-            # sleep(i / 1000)
+            sleep(i / 1000)
             self.ui.progressBar.setValue(i)
 
 
