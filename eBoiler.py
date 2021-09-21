@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_eBoiler(object):
     def setupUi(self, eBoiler):
         eBoiler.setObjectName("eBoiler")
-        eBoiler.resize(835, 488)
+        eBoiler.resize(835, 487)
         self.label = QtWidgets.QLabel(eBoiler)
         self.label.setGeometry(QtCore.QRect(260, 50, 241, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
@@ -78,7 +78,7 @@ class Ui_eBoiler(object):
         self.textBrowser.setGeometry(QtCore.QRect(8, 6, 271, 131))
         self.textBrowser.setObjectName("textBrowser")
         self.label_7 = QtWidgets.QLabel(self.widget_2)
-        self.label_7.setGeometry(QtCore.QRect(20, 10, 47, 13))
+        self.label_7.setGeometry(QtCore.QRect(20, 10, 55, 16))
         self.label_7.setObjectName("label_7")
         self.Panel_1 = QtWidgets.QWidget(eBoiler)
         self.Panel_1.setEnabled(True)
