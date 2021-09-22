@@ -12,27 +12,37 @@ from GAS import GAS_class
 g1 = GAS_class()
 
 
-class create_bot(GAS_class):  # How to input dna????
-    def __init__(self, x, y, g1, dna=False):
-        # super().__init__(GAS)
+class create_bot:  # How to input dna????
+    def __init__(self, x, y, dna=False):
+        super().__init__()
 
         # g1 = GAS
         self.max_vel = g1.params.max_vel
         self.mutation_rate = g1.params.mutation_rate
         self.green = g1.params.green
+        self.black = g1.params.black
         self.game_width = g1.params.game_width
         self.boundary_size = g1.params.boundary_size
         self.game_height = g1.params.game_height
         self.bots = g1.params.bots
+        self.food = g1.params.food
+        self.poison = g1.params.poison
+        self.max_poison = g1.params.max_poison
+        self.clock = g1.params.clock
+        self.fps = g1.params.fps
+        self.oldest_ever = g1.params.oldest_ever
+        self.oldest_ever_dna = g1.params.oldest_ever_dna
+        self.nutrition = g1.params.nutrition
 
         self.steering_weights = g1.params.steering_weights
         self.perception_radius_mutation_range = g1.params.perception_radius_mutation_range
         self.initial_max_force = g1.params.initial_max_force
         self.initial_perception_radius = g1.params.initial_perception_radius
+        self.gameDisplay = g1.params.gameDisplay
 
         self.reproduction_rate = g1.params.reproduction_rate
-        self.normalise = g1.normalise()
-        self.lerp = g1.lerp()
+        self.normalise = g1.normalise
+        self.lerp = g1.lerp
         self.health = g1.params.health
 
 
@@ -42,28 +52,33 @@ class create_bot(GAS_class):  # How to input dna????
         self.acceleration = numpy.array([0, 0], dtype='float64')
         self.colour = self.green
 
+        self.dna = dna
         self.max_vel = 2
         self.max_force = 0.5
         self.size = 5
         self.age = 1
 
+
         if dna:
-            self.dna = []
+            dna = []
             for i in range(len(dna)):
                 if random.random() < self.mutation_rate:
                     if i < 2:
-                        self.dna.append(dna[i] + random.uniform(-self.steering_weights, self.steering_weights))
+                        dna.append(dna[i] + random.uniform(-self.steering_weights, self.steering_weights))
                     else:
-                        self.dna.append(dna[i] + random.uniform(-self.perception_radius_mutation_range,
+                        dna.append(dna[i] + random.uniform(-self.perception_radius_mutation_range,
                                                                 self.perception_radius_mutation_range))
 
                 else:
-                    self.dna.append(dna[i])
+                    dna.append(dna[i])
         else:
-            self.dna = [random.uniform(-self.initial_max_force, self.initial_max_force),
+            dna = [random.uniform(-self.initial_max_force, self.initial_max_force),
                         random.uniform(-self.initial_max_force, self.initial_max_force),
                         random.uniform(0, self.initial_perception_radius), random.uniform(0, self.initial_perception_radius)]
-        print(self.dna)
+        print(dna)
+
+
+
 
     def update(self):
         self.velocity += self.acceleration
@@ -76,7 +91,7 @@ class create_bot(GAS_class):  # How to input dna????
         self.colour = self.lerp()
         self.health = min(g1.params.health, self.health)
         if self.age % 1000 == 0:
-            print(self.age, self.dna)
+            print(self.age, dna)
         self.age += 1
 
     def reproduce(self):
@@ -147,7 +162,7 @@ class create_bot(GAS_class):  # How to input dna????
         pygame.gfxdraw.aacircle(self.gameDisplay, int(self.position[0]), int(self.position[1]), 10, self.colour)
         pygame.gfxdraw.filled_circle(self.gameDisplay, int(self.position[0]), int(self.position[1]), 10, self.colour)
         pygame.draw.circle(self.gameDisplay, self.green, (int(self.position[0]), int(self.position[1])),
-                           abs(int(self.dna[2])), abs(int(min(2, self.dna[2]))))
+                           abs(int(dna[2])), abs(int(min(2, self.dna[2]))))
         pygame.draw.circle(self.gameDisplay, self.red, (int(self.position[0]), int(self.position[1])), abs(int(self.dna[3])),
                            abs(int(min(2, self.dna[3]))))
         pygame.draw.line(self.gameDisplay, self.green, (int(self.position[0]), int(self.position[1])), (
@@ -156,6 +171,7 @@ class create_bot(GAS_class):  # How to input dna????
         pygame.draw.line(self.gameDisplay, self.red, (int(self.position[0]), int(self.position[1])), (
         int(self.position[0] + (self.velocity[0] * self.dna[1] * 25)),
         int(self.position[1] + (self.velocity[1] * self.dna[1] * 25))), 2)
+
 
     # for i in range(10):
     #     bots.append(create_bot(random.uniform(0, game_width), random.uniform(0, game_height)))

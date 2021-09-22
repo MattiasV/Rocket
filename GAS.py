@@ -9,14 +9,13 @@ import math
 import numpy
 from pygame import gfxdraw
 
-from create_bot import create_bot
 
-class GAS_class():
+class GAS_class:
     def __init__(self, *args, **kwargs):
         super(GAS_class).__init__(*args, **kwargs)
 
         pygame.init()
-        self.params = []
+        self.params = GAS_class
         self.params.game_width = 800
         self.params.game_height = 600
         self.params.white = (255, 255, 255)
