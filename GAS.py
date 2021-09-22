@@ -11,9 +11,9 @@ from pygame import gfxdraw
 
 from create_bot import create_bot
 
-class GAS:
+class GAS_class():
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(GAS_class).__init__(*args, **kwargs)
 
         pygame.init()
         self.params = []
@@ -121,7 +121,7 @@ class GAS:
 
 
 if __name__ == "__main__":
-    g1 = GAS()
+    g1 = GAS_class()
     
     for i in range(10):
         g1.params.bots.append(create_bot(random.uniform(0, g1.params.game_width), random.uniform(0, g1.params.game_height)))

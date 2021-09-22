@@ -9,15 +9,11 @@ import math
 import numpy
 from pygame import gfxdraw
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 85d635ac6464edd1178ce9d39d720a6d5d481819
 class GAS:
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+        self.params = None
         pygame.init()
         self.params.game_width = 800
         self.params.game_height = 600
@@ -51,10 +47,6 @@ class GAS:
 
     def lerp():
         percent_health = bot.health / health
-=======
-    def lerp(self):
-        percent_health = self.bot.health / self.health
->>>>>>> 85d635ac6464edd1178ce9d39d720a6d5d481819
         lerped_colour = (max(min((1 - percent_health) * 255, 255), 0), max(min(percent_health * 255, 255), 0), 0)
         return (lerped_colour)
 
@@ -71,7 +63,7 @@ class GAS:
             vector = vector / magnitude
         return vector
 
-    class create_bot():  # How to input dna????
+    class create_bot:  # How to input dna????
         def __init__(self, x, y, dna=False):
             super().__init__(x, y, dna=False)
             self.position = numpy.array([x, y], dtype='float64')
