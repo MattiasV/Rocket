@@ -13,14 +13,15 @@ g1 = GAS_class()
 
 
 class create_bot:  # How to input dna????
-    def __init__(self, x, y, dna=False):
-        super().__init__()
 
+    def __init__(self, x, y, dna=False, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         # g1 = GAS
         self.max_vel = g1.params.max_vel
         self.mutation_rate = g1.params.mutation_rate
         self.green = g1.params.green
         self.black = g1.params.black
+        self.red = g1.params.red
         self.game_width = g1.params.game_width
         self.boundary_size = g1.params.boundary_size
         self.game_height = g1.params.game_height
@@ -42,7 +43,6 @@ class create_bot:  # How to input dna????
 
         self.reproduction_rate = g1.params.reproduction_rate
         self.normalise = g1.normalise
-        self.lerp = g1.lerp
         self.health = g1.params.health
 
 
@@ -50,33 +50,36 @@ class create_bot:  # How to input dna????
         self.velocity = numpy.array([random.uniform(-self.max_vel, self.max_vel), random.uniform(-self.max_vel, self.max_vel)],
                                     dtype='float64')
         self.acceleration = numpy.array([0, 0], dtype='float64')
-        self.colour = self.green
 
-        self.dna = dna
+        dna = False
         self.max_vel = 2
         self.max_force = 0.5
         self.size = 5
         self.age = 1
 
-
         if dna:
-            dna = []
+            print("AAAAAAAAAAA")
+            self.dna = []
             for i in range(len(dna)):
                 if random.random() < self.mutation_rate:
                     if i < 2:
-                        dna.append(dna[i] + random.uniform(-self.steering_weights, self.steering_weights))
+                        self.dna.append(dna[i] + random.uniform(-self.steering_weights, self.steering_weights))
                     else:
-                        dna.append(dna[i] + random.uniform(-self.perception_radius_mutation_range,
+                        self.dna.append(dna[i] + random.uniform(-self.perception_radius_mutation_range,
                                                                 self.perception_radius_mutation_range))
 
                 else:
-                    dna.append(dna[i])
+                    self.dna.append(dna[i])
         else:
-            dna = [random.uniform(-self.initial_max_force, self.initial_max_force),
+            self.dna = [random.uniform(-self.initial_max_force, self.initial_max_force),
                         random.uniform(-self.initial_max_force, self.initial_max_force),
                         random.uniform(0, self.initial_perception_radius), random.uniform(0, self.initial_perception_radius)]
-        print(dna)
+        # print(self.dna)
 
+    def lerp(self):
+        percent_health = self.health / g1.params.health
+        lerped_colour = (max(min((1 - percent_health) * 255, 255), 0), max(min(percent_health * 255, 255), 0), 0)
+        return (lerped_colour)
 
     def update(self):
         self.velocity += self.acceleration
@@ -89,7 +92,7 @@ class create_bot:  # How to input dna????
         self.colour = self.lerp()
         self.health = min(g1.params.health, self.health)
         if self.age % 1000 == 0:
-            print(self.age, dna)
+            print(self.age, self.dna)
         self.age += 1
 
     def reproduce(self):
@@ -160,7 +163,7 @@ class create_bot:  # How to input dna????
         pygame.gfxdraw.aacircle(self.gameDisplay, int(self.position[0]), int(self.position[1]), 10, self.colour)
         pygame.gfxdraw.filled_circle(self.gameDisplay, int(self.position[0]), int(self.position[1]), 10, self.colour)
         pygame.draw.circle(self.gameDisplay, self.green, (int(self.position[0]), int(self.position[1])),
-                           abs(int(dna[2])), abs(int(min(2, self.dna[2]))))
+                           abs(int(self.dna[2])), abs(int(min(2, self.dna[2]))))
         pygame.draw.circle(self.gameDisplay, self.red, (int(self.position[0]), int(self.position[1])), abs(int(self.dna[3])),
                            abs(int(min(2, self.dna[3]))))
         pygame.draw.line(self.gameDisplay, self.green, (int(self.position[0]), int(self.position[1])), (
@@ -171,59 +174,65 @@ class create_bot:  # How to input dna????
         int(self.position[1] + (self.velocity[1] * self.dna[1] * 25))), 2)
 
 
-    # for i in range(10):
-    #     bots.append(create_bot(random.uniform(0, game_width), random.uniform(0, game_height)))
-    # running = True
-    # while (running):
-    #     gameDisplay.fill(black)
-    #     if len(bots) < 5 or random.random() < 0.0001:
-    #         bots.append(create_bot(random.uniform(0, game_width), random.uniform(0, game_height)))
-    #     if random.random() < 0.1:
-    #         food.append(numpy.array([random.uniform(boundary_size, game_width - boundary_size),
-    #                                  random.uniform(boundary_size, game_height - boundary_size)], dtype='float64'))
-    #     if random.random() < 0.01:
-    #         poison.append(numpy.array([random.uniform(boundary_size, game_width - boundary_size),
-    #                                    random.uniform(boundary_size, game_height - boundary_size)], dtype='float64'))
-    #     if len(poison) > max_poison:
-    #         poison.pop(0)
 
-    #     for event in pygame.event.get():
-    #         if event.type == pygame.QUIT:
-    #             running = False
-    #     # print(event)
 
-    #     # print(bots[0].position)
-    #     # print((bots[0].position),(bots[0].position+(-size,0)),(bots[0].position+(-size/2,size)))
-    #     for bot in bots[::-1]:
-    #         bot.eat(food, 0)
-    #         bot.eat(poison, 1)
-    #         bot.boundaries()
-    #         # bot.seek(pygame.mouse.get_pos())
-    #         bot.update()
-    #         if bot.age > oldest_ever:
-    #             oldest_ever = bot.age
-    #             oldest_ever_dna = bot.dna
-    #             print(oldest_ever, oldest_ever_dna)
-    #         bot.draw_bot()
-    #         # pygame.draw.polygon(gameDisplay, bot.colour, ((bot.position),tuple(map(operator.add,bot.position,(-size,0))),tuple(map(operator.add,bot.position,(-size/2,size)))))
-    #         if bot.dead():
-    #             bots.remove(bot)
-    #         else:
-    #             bot.reproduce()
+class sim:
+    def __init__(*args, **kwargs):
+        cb = create_bot(random.uniform(0, 800), random.uniform(0, 600), g1)
+        print(cb.game_width)
+        for i in range(10):
+            cb.bots.append(create_bot(random.uniform(0, cb.game_width), random.uniform(0, cb.game_height)))
+        running = True
+        while (running):
+            cb.gameDisplay.fill(cb.black)
+            if len(cb.bots) < 5 or random.random() < 0.0001:
+                cb.bots.append(create_bot(random.uniform(0, cb.game_width), random.uniform(0, cb.game_height)))
+            if random.random() < 0.1:
+                cb.food.append(numpy.array([random.uniform(cb.boundary_size, cb.game_width - cb.boundary_size),
+                                         random.uniform(cb.boundary_size, cb.game_height - cb.boundary_size)], dtype='float64'))
+            if random.random() < 0.01:
+                cb.poison.append(numpy.array([random.uniform(cb.boundary_size, cb.game_width - cb.boundary_size),
+                                           random.uniform(cb.boundary_size, cb.game_height - cb.boundary_size)], dtype='float64'))
+            if len(cb.poison) > cb.max_poison:
+                cb.poison.pop(0)
 
-    #     # if random.random()<0.02:
-    #     # bots.append(create_bot(random.uniform(0,game_width),random.uniform(0,game_height)))
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+            # print(event)
 
-    #     for i in food:
-    #         pygame.draw.circle(gameDisplay, (0, 255, 0), (int(i[0]), int(i[1])), 3)
-    #     # pygame.draw.circle(gameDisplay, bot.colour, (int(self.position[0]), int(self.position[1])), 10)
-    #     for i in poison:
-    #         pygame.draw.circle(gameDisplay, (255, 0, 0), (int(i[0]), int(i[1])), 3)
-    #     pygame.display.update()
-    #     clock.tick(fps)
+            # print(bots[0].position)
+            # print((bots[0].position),(bots[0].position+(-size,0)),(bots[0].position+(-size/2,size)))
+            for bot in cb.bots[::-1]:
+                bot.eat(cb.food, 0)
+                bot.eat(cb.poison, 1)
+                bot.boundaries()
+                # bot.seek(pygame.mouse.get_pos())
+                bot.update()
+                if bot.age > cb.oldest_ever:
+                    oldest_ever = bot.age
+                    oldest_ever_dna = bot.dna
+                    print(oldest_ever, oldest_ever_dna)
+                bot.draw_bot()
+                # pygame.draw.polygon(gameDisplay, bot.colour, ((bot.position),tuple(map(operator.add,bot.position,(-size,0))),tuple(map(operator.add,bot.position,(-size/2,size)))))
+                if bot.dead():
+                    cb.bots.remove(bot)
+                else:
+                    bot.reproduce()
 
-    # pygame.quit()
-    # quit()
+            # if random.random()<0.02:
+            # bots.append(create_bot(random.uniform(0,game_width),random.uniform(0,game_height)))
+
+            for i in cb.food:
+                pygame.draw.circle(cb.gameDisplay, (0, 255, 0), (int(i[0]), int(i[1])), 3)
+            # pygame.draw.circle(gameDisplay, bot.colour, (int(self.position[0]), int(self.position[1])), 10)
+            for i in cb.poison:
+                pygame.draw.circle(cb.gameDisplay, (255, 0, 0), (int(i[0]), int(i[1])), 3)
+            pygame.display.update()
+            cb.clock.tick(cb.fps)
+
+        pygame.quit()
+        quit()
 
 if __name__ == "__main__":
-    create_bot(random.uniform(0,800),random.uniform(0,600),g1)
+    sim()

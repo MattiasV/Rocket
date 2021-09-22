@@ -11,8 +11,9 @@ from pygame import gfxdraw
 
 
 class GAS_class:
+
     def __init__(self, *args, **kwargs):
-        super(GAS_class).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
         pygame.init()
         self.params = GAS_class
@@ -44,16 +45,10 @@ class GAS_class:
         self.params.gameDisplay = pygame.display.set_mode((self.params.game_width, self.params.game_height))
         self.params.clock = pygame.time.Clock()
 
-
-    def lerp(self, bot):
-        percent_health = bot.health / self.params.health
-        lerped_colour = (max(min((1 - percent_health) * 255, 255), 0), max(min(percent_health * 255, 255), 0), 0)
-        return (lerped_colour)
-
     def magnitude_calc(self, vector):
         x = 0
-        for i in vector:
-            x += i ** 2
+        for ii in vector:
+            x += ii ** 2
         magnitude = x ** 0.5
         return (magnitude)
 

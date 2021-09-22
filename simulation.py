@@ -43,7 +43,6 @@ class GAS:
         self.params.gameDisplay = pygame.display.set_mode((self.game_width, self.game_height))
         self.params.clock = pygame.time.Clock()
 
-<<<<<<< HEAD
 
     def lerp():
         percent_health = bot.health / health
