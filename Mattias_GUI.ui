@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Sim</class>
+ <widget class="QWidget" name="Sim">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>283</width>
+    <height>301</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>58</x>
+     <y>158</y>
+     <width>77</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Min # bots</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addBot">
+   <property name="geometry">
+    <rect>
+     <x>126</x>
+     <y>154</y>
+     <width>27</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>+</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="removeBot">
+   <property name="geometry">
+    <rect>
+     <x>154</x>
+     <y>154</y>
+     <width>27</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="showAmountOfBots">
+   <property name="geometry">
+    <rect>
+     <x>58</x>
+     <y>182</y>
+     <width>55</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="amountBotsSlider">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>240</y>
+     <width>160</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>218</y>
+     <width>165</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Slider to change min bots</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="amountBotsSlider_2">
+   <property name="geometry">
+    <rect>
+     <x>46</x>
+     <y>102</y>
+     <width>160</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>46</x>
+     <y>80</y>
+     <width>165</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Slider to change mutation</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
